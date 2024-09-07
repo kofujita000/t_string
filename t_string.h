@@ -6,7 +6,7 @@
 /*   By: kofujita <kofujita@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 21:09:15 by kofujita          #+#    #+#             */
-/*   Updated: 2024/07/21 16:30:05 by kofujita         ###   ########.fr       */
+/*   Updated: 2024/09/05 18:51:56 by kofujita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -199,6 +199,20 @@ const char	*t_string_find(
  */
 const char	*t_string_find_end(
 				const t_string *ts,
+				const char chr);
+
+/**
+ * t_string 型の先頭アドレス + 開始指定距離から文字を探索するための関数
+ *
+ * 1. const t_string* -> 検索対象 t_string
+ * 2. const size_t -> 開始指定距離
+ * 3. const char -> 検索対象文字
+ *
+ * r. const char* -> [!NULL => 見つけたアドレス] / [NULL => 検索失敗]
+ */
+const char *t_string_find_scope(
+				const t_string *ts,
+				const size_t pnt,
 				const char chr);
 
 /**
