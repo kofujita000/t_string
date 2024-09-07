@@ -6,7 +6,7 @@
 #    By: kofujita <kofujita@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/17 20:29:24 by kofujita          #+#    #+#              #
-#    Updated: 2024/07/21 16:33:23 by kofujita         ###   ########.fr        #
+#    Updated: 2024/09/07 11:45:39 by kofujita         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRCS		:= srcs/append.c \
 			   srcs/erase.c \
 			   srcs/find.c \
 			   srcs/find_end.c \
+			   srcs/find_scope.c \
 			   srcs/data.c \
 			   srcs/free.c \
 			   srcs/init.c \
