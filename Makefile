@@ -6,11 +6,11 @@
 #    By: kofujita <kofujita@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/17 20:29:24 by kofujita          #+#    #+#              #
-#    Updated: 2024/09/07 11:45:39 by kofujita         ###   ########.fr        #
+#    Updated: 2024/09/16 12:24:08 by kofujita         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME        := t_string.a
+NAME        := libtstring.a
 INCLUDE_DIR := 
 CFLAGS      := -Wall -Wextra -Werror
 
@@ -86,5 +86,7 @@ fclean : clean
 re : fclean all
 
 install : all
+	@$(MKDIR) $(INSTALL_DIR)/lib
+	@$(MKDIR) $(INSTALL_DIR)/include
 	@$(CP) $(NAME) $(INSTALL_DIR)/lib
 	@$(CP) t_string.h $(INSTALL_DIR)/include
