@@ -6,7 +6,7 @@
 /*   By: kofujita <kofujita@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 21:09:15 by kofujita          #+#    #+#             */
-/*   Updated: 2024/09/05 18:51:56 by kofujita         ###   ########.fr       */
+/*   Updated: 2024/10/27 11:42:57 by kofujita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,16 @@ char		*t_string_data(
  */
 const char	*t_string_c_str(
 				t_string *ts);
+
+/**
+ * t_string の文字列の末尾アドレスを取得する
+ *
+ * 1. const t_string *const -> 情報を保持する構造体
+ *
+ * r. const char* -> 文字列の末尾アドレス(NULLの場合はエラー)
+ */
+const char	*t_string_end(
+				const t_string *const ts);
 
 /**
  * t_string の確保メモリサイズを取得する
@@ -210,7 +220,7 @@ const char	*t_string_find_end(
  *
  * r. const char* -> [!NULL => 見つけたアドレス] / [NULL => 検索失敗]
  */
-const char *t_string_find_scope(
+const char	*t_string_find_scope(
 				const t_string *ts,
 				const size_t pnt,
 				const char chr);
@@ -228,6 +238,35 @@ const char	*t_string_search(
 				const t_string *ts,
 				const char *begin,
 				const char *end);
+
+/**
+ * t_string 型の末尾の文字から文字列を探索するための関数
+ *
+ * 1. const t_string* -> 探索対象 t_string
+ * 2. const char* -> 探索対象文字列の先頭アドレス
+ * 3. const char* -> 探索対象文字列の末尾アドレス (NULLの場合は、2の文字列の長さが適応される)
+ *
+ * r. const char* -> [!NULL => 見つけたアドレス] / [NULL => 探索失敗]
+ */
+const char	*t_string_search_end(
+				const t_string *const ts,
+				const char *begin,
+				const char *end);
+
+/**
+ * t_string 型の先頭アドレス + 開始指定距離から文字列を探索するための関数
+ *
+ * 1. const t_string* -> 検索対象 t_string
+ * 2. const size_t -> 開始指定距離
+ * 3. const char -> 検索対象文字
+ *
+ * r. const char* -> [!NULL => 見つけたアドレス] / [NULL => 検索失敗]
+ */
+const char	*t_string_search_scope(
+				const t_string *const ts,
+				const size_t pnt,
+				const char *const begin,
+				const char *const end);
 
 /**
  * char* のメモリ情報を移動する
