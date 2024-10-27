@@ -37,7 +37,7 @@ BAR_LENGTH := 40
 
 $(NAME) :
 	@$(MAKE) -C ../../
-	@$(CC) -o $(NAME) $(SRCS) $(LIBRARIES) ../../t_string.a
+	@$(CC) -o $(NAME) $(SRCS) $(LIBRARIES) ../../libtstring.a
 	@echo Created $(NAME)
 
 all : $(NAME)
