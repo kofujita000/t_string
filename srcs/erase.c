@@ -6,7 +6,7 @@
 /*   By: kofujita <kofujita@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 21:02:33 by kofujita          #+#    #+#             */
-/*   Updated: 2024/08/24 15:03:26 by kofujita         ###   ########.fr       */
+/*   Updated: 2025/03/03 21:31:58 by kofujita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	t_string_erase(
 	if (!ts || end <= begin || ts->__length < end)
 		return (1);
 	__t_string_memmove(ts->__data + begin, ts->__data + end, \
-			ts->__length - (end - begin));
+			ts->__length - (begin - (end - begin)));
 	ts->__length -= end - begin;
 	ts->__data[ts->__length] = 0x00;
 	return (0);
