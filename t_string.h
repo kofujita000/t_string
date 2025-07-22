@@ -6,7 +6,7 @@
 /*   By: kofujita <kofujita@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 21:09:15 by kofujita          #+#    #+#             */
-/*   Updated: 2024/10/27 11:42:57 by kofujita         ###   ########.fr       */
+/*   Updated: 2025/07/22 20:05:01 by nshindom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,94 +27,94 @@ typedef struct s_string
 }	t_string;
 
 /**
- * t_string の初期化情報を渡す関数
+ * Function to pass initialization information for t_string
  *
- * r. t_string* -> 初期化情報
+ * r. t_string* -> Initialization information
  */
 t_string	*t_string_init(void);
 
 /**
- * t_string のメモリ解放関数
+ * Memory deallocation function for t_string
  *
- * 1. t_string* -> 解放したい構造体
+ * 1. t_string* -> Structure to free
  */
 void		t_string_free(
 				t_string *ts);
 
 /**
- * t_string のメモリを変更する構造体
+ * Structure to modify memory of t_string
  *
- * 1. t_string* -> リサイズしたい構造体
+ * 1. t_string* -> Structure to resize
  */
 t_string	*t_string_resize(
 				t_string *ts,
 				size_t rsize);
 
 /**
- * t_string をクリアする関数
+ * Function to clear t_string
  *
- * 1. t_string* -> クリアしたい構造体
+ * 1. t_string* -> Structure to clear
  */
 void		t_string_clear(
 				t_string *ts);
 
 /**
- * t_string の文字列の先頭アドレスを取得する
+ * Get head address of t_string string
  *
- * 1. t_string* -> 情報を保持する構造体
+ * 1. t_string* -> Structure holding information
  *
- * r. char* -> 文字列の先頭アドレス
+ * r. char* -> Head address of string
  */
 char		*t_string_data(
 				t_string *ts);
 
 /**
- * t_string の文字列の先頭アドレスを取得する
+ * Get head address of t_string string
  *
- * 1. t_string* -> 情報を保持する構造体
+ * 1. t_string* -> Structure holding information
  *
- * r. const char* -> 文字列の先頭アドレス
+ * r. const char* -> Head address of string
  */
 const char	*t_string_c_str(
 				t_string *ts);
 
 /**
- * t_string の文字列の末尾アドレスを取得する
+ * Get end address of t_string string
  *
- * 1. const t_string *const -> 情報を保持する構造体
+ * 1. const t_string *const -> Structure holding information
  *
- * r. const char* -> 文字列の末尾アドレス(NULLの場合はエラー)
+ * r. const char* -> End address of string (error if NULL)
  */
 const char	*t_string_end(
 				const t_string *const ts);
 
 /**
- * t_string の確保メモリサイズを取得する
+ * Get allocated memory size of t_string
  *
- * 1. t_string* -> 確保しているメモリサイズを取得する
+ * 1. t_string* -> Get allocated memory size
  * 
- * r. size_t -> メモリサイズ
+ * r. size_t -> Memory size
  */
 size_t		t_string_size(
 				t_string *ts);
 
 /**
- * t_string の文字列の長さを取得する
+ * Get length of t_string string
  *
- * 1. t_string* -> 文字列の長さを取得する
+ * 1. t_string* -> Get length of string
  *
- * r. size_t -> 文字列サイズ
+ * r. size_t -> String size
  */
 size_t		t_string_length(
 				t_string *ts);
 
 /**
- * t_string の文字列を設定する
+ * Set string of t_string
  *
- * 1. t_string* -> 情報を保持する構造体
- * 2. const char* -> 代入したい先頭のアドレス
- * 3. const char* -> 代入したい末尾のアドレス
- *  >> (NULLの場合は、先頭から NULL が出現するまで)
+ * 1. t_string* -> Structure holding information
+ * 2. const char* -> Head address to assign
+ * 3. const char* -> End address to assign
+ *  >> (If NULL, from head until NULL appears)
  */
 t_string	*t_string_set(
 				t_string *ts,
@@ -122,26 +122,26 @@ t_string	*t_string_set(
 				const char *end);
 
 /**
- * t_string の文字列の末尾に文字を追加する
+ * Add character to end of t_string string
  *
- * 1. t_string* -> 情報を保持する構造体
- * 2. const char -> 代入したい文字
+ * 1. t_string* -> Structure holding information
+ * 2. const char -> Character to assign
  *
- * r. t_string* -> 情報を保持する構造体
+ * r. t_string* -> Structure holding information
  */
 t_string	*t_string_push_back(
 				t_string *ts,
 				const char chr);
 
 /**
- * t_sring の文字列の末尾に文字列を追加する
+ * Add string to end of t_string string
  *
- * 1. t_string* -> 情報を保持する構造体
- * 2. const char* -> 代入したい文字列の先頭アドレス
- * 3. const char* -> 代入したい文字列の末尾アドレス
- *  >> (NULLの場合は、先頭から NULL が出現するまで)
+ * 1. t_string* -> Structure holding information
+ * 2. const char* -> Head address of string to assign
+ * 3. const char* -> End address of string to assign
+ *  >> (If NULL, from head until NULL appears)
  *
- * r. t_string* -> 情報を保持する構造体
+ * r. t_string* -> Structure holding information
  */
 t_string	*t_string_append(
 				t_string *ts,
@@ -149,11 +149,11 @@ t_string	*t_string_append(
 				const char *end);
 
 /**
- * t_string の文字列代入を行うための関数
+ * Function to perform string assignment for t_string
  *
- * 1. t_string* -> 情報を保持する構造体
+ * 1. t_string* -> Structure holding information
  *
- * r. t_string* -> 情報を保持する構造体
+ * r. t_string* -> Structure holding information
  */
 t_string	*t_string_insert(
 				t_string *ts,
@@ -162,13 +162,13 @@ t_string	*t_string_insert(
 				const char *end);
 
 /**
- * t_string の文字列の削除を行うための関数
+ * Function to perform string deletion for t_string
  *
- * 1. t_string* -> 情報を保持する構造体
- * 2. size_t -> 削除開始位置
- * 3. size_t -> 削除終了位置 (絶対距離)
+ * 1. t_string* -> Structure holding information
+ * 2. size_t -> Deletion start position
+ * 3. size_t -> Deletion end position (absolute distance)
  *
- * r. int -> [0 => 処理成功] / [1 => 処理失敗]
+ * r. int -> [0 => Processing success] / [1 => Processing failure]
  */
 int			t_string_erase(
 				t_string *ts,
@@ -176,49 +176,51 @@ int			t_string_erase(
 				size_t end);
 
 /**
- * t_string 型同士を比較するための関数
+ * Function to compare t_string types
  *
- * 1. const t_string* -> 比較元
- * 2. const t_string* -> 比較先
+ * 1. const t_string* -> Comparison source
+ * 2. const t_string* -> Comparison destination
  *
- * r. int -> [0 => 等しい] / [0 より大きい => 第1引数が重たい] / [0 より小さい => 第2引数が重たい]
+ * r. int -> [0 => Equal] / [Greater than 0 => \
+ * First argument is heavier] / [Less than 0 => Second argument is heavier]
  */
 int			t_string_cmp(
 				const t_string *s1,
 				const t_string *s2);
 
 /**
- * t_string 型の先頭の文字から文字を探索するための関数
+ * Function to search for character from head character of t_string type
  *
- * 1. const t_string* -> 探索対象 t_string
- * 2. const char -> 探索対象文字
+ * 1. const t_string* -> Target t_string to search
+ * 2. const char -> Target character to search
  *
- * r. const char* -> [!NULL => 見つけたアドレス] / [NULL => 探索失敗]
+ * r. const char* -> [!NULL => Found address] / [NULL => Search failure]
  */
 const char	*t_string_find(
 				const t_string *ts,
 				const char chr);
 
 /**
- * t_string 型の末尾の文字から文字を探索するための関数
+ * Function to search for character from end character of t_string type
  *
- * 1. const t_string* -> 探索対象 t_string
- * 2. const char -> 探索対象文字
+ * 1. const t_string* -> Target t_string to search
+ * 2. const char -> Target character to search
  *
- * r. const char* -> [!NULL => 見つけたアドレス] / [NULL => 探索失敗]
+ * r. const char* -> [!NULL => Found address] / [NULL => Search failure]
  */
 const char	*t_string_find_end(
 				const t_string *ts,
 				const char chr);
 
 /**
- * t_string 型の先頭アドレス + 開始指定距離から文字を探索するための関数
+ * Function to search for character from head address \
+ * + specified start distance of t_string type
  *
- * 1. const t_string* -> 検索対象 t_string
- * 2. const size_t -> 開始指定距離
- * 3. const char -> 検索対象文字
+ * 1. const t_string* -> Target t_string to search
+ * 2. const size_t -> Specified start distance
+ * 3. const char -> Target character to search
  *
- * r. const char* -> [!NULL => 見つけたアドレス] / [NULL => 検索失敗]
+ * r. const char* -> [!NULL => Found address] / [NULL => Search failure]
  */
 const char	*t_string_find_scope(
 				const t_string *ts,
@@ -226,13 +228,14 @@ const char	*t_string_find_scope(
 				const char chr);
 
 /**
- * t_string 型の先頭の文字から文字列を探索するための関数
+ * Function to search for string from head character of t_string type
  *
- * 1. const t_string* -> 探索対象 t_string
- * 2. const char* -> 探索対象文字列の先頭アドレス
- * 3. const char* -> 探索対象文字列の末尾アドレス (NULLの場合は、2の文字列の長さが適応される)
+ * 1. const t_string* -> Target t_string to search
+ * 2. const char* -> Head address of target string to search
+ * 3. const char* -> End address of target string to search \
+ * (If NULL, length of string 2 is applied)
  *
- * r. const char* -> [!NULL => 見つけたアドレス] / [NULL => 探索失敗]
+ * r. const char* -> [!NULL => Found address] / [NULL => Search failure]
  */
 const char	*t_string_search(
 				const t_string *ts,
@@ -240,13 +243,14 @@ const char	*t_string_search(
 				const char *end);
 
 /**
- * t_string 型の末尾の文字から文字列を探索するための関数
+ * Function to search for string from end character of t_string type
  *
- * 1. const t_string* -> 探索対象 t_string
- * 2. const char* -> 探索対象文字列の先頭アドレス
- * 3. const char* -> 探索対象文字列の末尾アドレス (NULLの場合は、2の文字列の長さが適応される)
+ * 1. const t_string* -> Target t_string to search
+ * 2. const char* -> Head address of target string to search
+ * 3. const char* -> End address of target string to search \
+ * (If NULL, length of string 2 is applied)
  *
- * r. const char* -> [!NULL => 見つけたアドレス] / [NULL => 探索失敗]
+ * r. const char* -> [!NULL => Found address] / [NULL => Search failure]
  */
 const char	*t_string_search_end(
 				const t_string *const ts,
@@ -254,13 +258,14 @@ const char	*t_string_search_end(
 				const char *end);
 
 /**
- * t_string 型の先頭アドレス + 開始指定距離から文字列を探索するための関数
+ * Function to search for string from head address \
+ * + specified start distance of t_string type
  *
- * 1. const t_string* -> 検索対象 t_string
- * 2. const size_t -> 開始指定距離
- * 3. const char -> 検索対象文字
+ * 1. const t_string* -> Target t_string to search
+ * 2. const size_t -> Specified start distance
+ * 3. const char -> Target character to search
  *
- * r. const char* -> [!NULL => 見つけたアドレス] / [NULL => 検索失敗]
+ * r. const char* -> [!NULL => Found address] / [NULL => Search failure]
  */
 const char	*t_string_search_scope(
 				const t_string *const ts,
@@ -269,7 +274,7 @@ const char	*t_string_search_scope(
 				const char *const end);
 
 /**
- * char* のメモリ情報を移動する
+ * Move memory information of char*
  */
 char		*__t_string_memmove(
 				char *dst,
@@ -277,21 +282,21 @@ char		*__t_string_memmove(
 				size_t n);
 
 /**
- * メモリを確保するための関数
+ * Function to allocate memory
  *
- * 1. t_string* -> 情報を保持する構造体
- * 2. size_t -> 確保しなければならない距離
+ * 1. t_string* -> Structure holding information
+ * 2. size_t -> Distance that must be allocated
  */
 t_string	*__t_string_realloc(
 				t_string *ts,
 				size_t size);
 
 /**
- * 文字列の長さを取得するための関数
+ * Function to get length of string
  *
- * 1. const char* -> 文字列の先頭アドレス
+ * 1. const char* -> Head address of string
  *
- * r. size_t -> 文字列の長さ
+ * r. size_t -> Length of string
  */
 size_t		__t_string_strlen(
 				const char *str);
