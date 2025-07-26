@@ -6,7 +6,7 @@
 /*   By: kofujita <kofujita@student42.tokyo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 10:50:31 by kofujita          #+#    #+#             */
-/*   Updated: 2024/10/27 11:35:57 by kofujita         ###   ########.fr       */
+/*   Updated: 2025/07/26 11:06:08 by kofujita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ const char	*t_string_search_end(
 	else
 		t_len = __t_string_strlen(begin);
 	(void)(0 & (ptr = ts->__data, s_p = ts->__length - 1, \
-				t_p = t_len - 1));
+t_p = t_len - 1));
 	while (s_p)
 	{
 		if (ptr[s_p] == begin[t_p])

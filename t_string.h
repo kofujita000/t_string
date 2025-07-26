@@ -6,7 +6,7 @@
 /*   By: kofujita <kofujita@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 21:09:15 by kofujita          #+#    #+#             */
-/*   Updated: 2025/07/22 20:05:01 by nshindom         ###   ########.fr       */
+/*   Updated: 2025/07/26 11:05:47 by kofujita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -181,8 +181,9 @@ int			t_string_erase(
  * 1. const t_string* -> Comparison source
  * 2. const t_string* -> Comparison destination
  *
- * r. int -> [0 => Equal] / [Greater than 0 => \
- * First argument is heavier] / [Less than 0 => Second argument is heavier]
+ * r. int -> [0 => Equal]
+ *           [Greater than 0 => First argument is heavier]
+ *           [Less than 0 => Second argument is heavier]
  */
 int			t_string_cmp(
 				const t_string *s1,
@@ -213,7 +214,7 @@ const char	*t_string_find_end(
 				const char chr);
 
 /**
- * Function to search for character from head address \
+ * Function to search for character from head address
  * + specified start distance of t_string type
  *
  * 1. const t_string* -> Target t_string to search
@@ -232,7 +233,7 @@ const char	*t_string_find_scope(
  *
  * 1. const t_string* -> Target t_string to search
  * 2. const char* -> Head address of target string to search
- * 3. const char* -> End address of target string to search \
+ * 3. const char* -> End address of target string to search
  * (If NULL, length of string 2 is applied)
  *
  * r. const char* -> [!NULL => Found address] / [NULL => Search failure]
@@ -247,7 +248,7 @@ const char	*t_string_search(
  *
  * 1. const t_string* -> Target t_string to search
  * 2. const char* -> Head address of target string to search
- * 3. const char* -> End address of target string to search \
+ * 3. const char* -> End address of target string to search
  * (If NULL, length of string 2 is applied)
  *
  * r. const char* -> [!NULL => Found address] / [NULL => Search failure]
@@ -258,7 +259,7 @@ const char	*t_string_search_end(
 				const char *end);
 
 /**
- * Function to search for string from head address \
+ * Function to search for string from head address
  * + specified start distance of t_string type
  *
  * 1. const t_string* -> Target t_string to search
