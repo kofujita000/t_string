@@ -6,7 +6,7 @@
 /*   By: kofujita <kofujita@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 21:04:22 by kofujita          #+#    #+#             */
-/*   Updated: 2025/10/11 22:58:19 by moco             ###   ########.fr       */
+/*   Updated: 2025/10/11 23:02:39 by kofujita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ t_string_node	*t_string_list_push_back(
  * r. size_t -> List size
  */
 size_t			t_string_list_size(
-					t_string_list *const thiz);
+					const t_string_list *const thiz);
 
 /**
  * Function to get the begin address
