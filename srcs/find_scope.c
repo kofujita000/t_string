@@ -6,14 +6,14 @@
 /*   By: kofujita <kofujita@student42.tokyo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 18:52:23 by kofujita          #+#    #+#             */
-/*   Updated: 2024/09/05 18:53:35 by kofujita         ###   ########.fr       */
+/*   Updated: 2025/10/11 22:02:21 by kofujita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../t_string.h"
 
 const char	*t_string_find_scope(
-				const t_string *ts,
+				const t_string *const ts,
 				const size_t pnt,
 				const char chr)
 {

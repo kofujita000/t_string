@@ -6,14 +6,14 @@
 /*   By: kofujita <kofujita@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 19:49:06 by kofujita          #+#    #+#             */
-/*   Updated: 2024/07/17 20:49:59 by kofujita         ###   ########.fr       */
+/*   Updated: 2025/10/11 21:57:13 by kofujita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../t_string.h"
 
 t_string	*t_string_append(
-				t_string *ts,
+				t_string *const ts,
 				const char *begin,
 				const char *end)
 {

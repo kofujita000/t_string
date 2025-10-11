@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find.c                                             :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kofujita <kofujita@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/20 20:03:22 by kofujita          #+#    #+#             */
-/*   Updated: 2025/10/11 22:02:09 by kofujita         ###   ########.fr       */
+/*   Created: 2025/10/11 21:41:17 by kofujita          #+#    #+#             */
+/*   Updated: 2025/10/11 21:41:18 by kofujita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../t_string.h"
+#include "../../t_string_list.h"
 
-const char	*t_string_find(
-				const t_string *const ts,
-				const char chr)
+t_string_node	*_t_string_node_init(void)
 {
-	const char	*ts_dp;
-	size_t		cnt;
+	t_string_node	*ret;
 
-	if (!ts)
-		return (NULL);
-	ts_dp = ts->__data;
-	cnt = 0;
-	while (cnt != ts->__length)
-	{
-		if (ts_dp[cnt] == chr)
-			return (ts_dp + cnt);
-		cnt++;
-	}
-	return (NULL);
+	ret = malloc(sizeof(t_string_node));
+	if (!ret)
+		return (ret);
+	ret->data = t_string_init();
+	if (!ret->data)
+		return (_t_string_node_free(ret), NULL);
+	ret->next = NULL;
+	return (ret);
 }

@@ -6,14 +6,14 @@
 /*   By: kofujita <kofujita@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 19:57:11 by kofujita          #+#    #+#             */
-/*   Updated: 2024/07/09 20:02:00 by kofujita         ###   ########.fr       */
+/*   Updated: 2025/10/11 21:57:38 by kofujita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../t_string.h"
 
 char	*t_string_data(
-			t_string *ts)
+			t_string *const ts)
 {
 	if (!ts)
 		return (NULL);

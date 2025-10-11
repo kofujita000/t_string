@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find.c                                             :+:      :+:    :+:   */
+/*   string.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kofujita <kofujita@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/20 20:03:22 by kofujita          #+#    #+#             */
-/*   Updated: 2025/10/11 22:02:09 by kofujita         ###   ########.fr       */
+/*   Created: 2025/10/11 22:21:49 by kofujita          #+#    #+#             */
+/*   Updated: 2025/10/11 22:22:29 by kofujita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../t_string.h"
+#include "../../t_string_list.h"
 
-const char	*t_string_find(
-				const t_string *const ts,
-				const char chr)
+t_string	*t_string_node_string(
+				t_string_node *const thiz)
 {
-	const char	*ts_dp;
-	size_t		cnt;
-
-	if (!ts)
+	if (!thiz)
 		return (NULL);
-	ts_dp = ts->__data;
-	cnt = 0;
-	while (cnt != ts->__length)
-	{
-		if (ts_dp[cnt] == chr)
-			return (ts_dp + cnt);
-		cnt++;
-	}
-	return (NULL);
+	return (thiz->data);
 }

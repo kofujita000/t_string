@@ -6,7 +6,7 @@
 #    By: kofujita <kofujita@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/17 20:29:24 by kofujita          #+#    #+#              #
-#    Updated: 2024/10/27 11:44:32 by kofujita         ###   ########.fr        #
+#    Updated: 2025/10/11 22:25:21 by kofujita         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,16 @@ SRCS		:= srcs/append.c \
 			   srcs/search_scope.c \
 			   srcs/set.c \
 			   srcs/size.c \
-			   srcs/strlen.c
+			   srcs/strlen.c \
+			   srcs/list/begin.c \
+			   srcs/list/free.c \
+			   srcs/list/init.c \
+			   srcs/list/push_back.c \
+			   srcs/list/size.c \
+			   srcs/node/free.c \
+			   srcs/node/init.c \
+			   srcs/node/next.c \
+			   srcs/node/string.c
 
 OBJS_DIR	:= objs
 OBJS		:= $(SRCS:%.c=$(OBJS_DIR)/%.o)
@@ -60,6 +69,8 @@ BAR_LENGTH := 40
 
 $(OBJS_DIR)/%.o: %.c
 	@$(MKDIR) $(OBJS_DIR) $(OBJS_DIR)/srcs
+	@$(MKDIR) $(OBJS_DIR) $(OBJS_DIR)/srcs/list
+	@$(MKDIR) $(OBJS_DIR) $(OBJS_DIR)/srcs/node
 	@$(CC) $(CFLAGS) $(INCLUDE_DIR) -o $@ -c $<
 	@$(eval PROGRESS=$(shell echo $$(($(PROGRESS) + 1))))
 	@PERCENTAGE=$$(($(PROGRESS) * 100 / $(SRCS_COUNT))) ; \

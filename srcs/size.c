@@ -6,14 +6,14 @@
 /*   By: kofujita <kofujita@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 20:02:08 by kofujita          #+#    #+#             */
-/*   Updated: 2024/07/09 20:02:43 by kofujita         ###   ########.fr       */
+/*   Updated: 2025/10/11 22:03:20 by kofujita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../t_string.h"
 
 size_t	t_string_size(
-			t_string *ts)
+			const t_string *const ts)
 {
 	if (!ts)
 		return (0);

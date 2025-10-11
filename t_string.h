@@ -6,7 +6,7 @@
 /*   By: kofujita <kofujita@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 21:09:15 by kofujita          #+#    #+#             */
-/*   Updated: 2025/07/26 11:05:47 by kofujita         ###   ########.fr       */
+/*   Updated: 2025/10/11 21:57:04 by kofujita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ t_string	*t_string_init(void);
  * 1. t_string* -> Structure to free
  */
 void		t_string_free(
-				t_string *ts);
+				t_string *const ts);
 
 /**
  * Structure to modify memory of t_string
@@ -47,7 +47,7 @@ void		t_string_free(
  * 1. t_string* -> Structure to resize
  */
 t_string	*t_string_resize(
-				t_string *ts,
+				t_string *const ts,
 				size_t rsize);
 
 /**
@@ -56,7 +56,7 @@ t_string	*t_string_resize(
  * 1. t_string* -> Structure to clear
  */
 void		t_string_clear(
-				t_string *ts);
+				t_string *const ts);
 
 /**
  * Get head address of t_string string
@@ -66,7 +66,7 @@ void		t_string_clear(
  * r. char* -> Head address of string
  */
 char		*t_string_data(
-				t_string *ts);
+				t_string *const ts);
 
 /**
  * Get head address of t_string string
@@ -76,7 +76,7 @@ char		*t_string_data(
  * r. const char* -> Head address of string
  */
 const char	*t_string_c_str(
-				t_string *ts);
+				const t_string *const ts);
 
 /**
  * Get end address of t_string string
@@ -96,7 +96,7 @@ const char	*t_string_end(
  * r. size_t -> Memory size
  */
 size_t		t_string_size(
-				t_string *ts);
+				const t_string *const ts);
 
 /**
  * Get length of t_string string
@@ -106,7 +106,7 @@ size_t		t_string_size(
  * r. size_t -> String size
  */
 size_t		t_string_length(
-				t_string *ts);
+				const t_string *const ts);
 
 /**
  * Set string of t_string
@@ -117,7 +117,7 @@ size_t		t_string_length(
  *  >> (If NULL, from head until NULL appears)
  */
 t_string	*t_string_set(
-				t_string *ts,
+				t_string *const ts,
 				const char *begin,
 				const char *end);
 
@@ -130,7 +130,7 @@ t_string	*t_string_set(
  * r. t_string* -> Structure holding information
  */
 t_string	*t_string_push_back(
-				t_string *ts,
+				t_string *const ts,
 				const char chr);
 
 /**
@@ -144,7 +144,7 @@ t_string	*t_string_push_back(
  * r. t_string* -> Structure holding information
  */
 t_string	*t_string_append(
-				t_string *ts,
+				t_string *const ts,
 				const char *begin,
 				const char *end);
 
@@ -156,7 +156,7 @@ t_string	*t_string_append(
  * r. t_string* -> Structure holding information
  */
 t_string	*t_string_insert(
-				t_string *ts,
+				t_string *const ts,
 				size_t pnt,
 				const char *begin,
 				const char *end);
@@ -171,7 +171,7 @@ t_string	*t_string_insert(
  * r. int -> [0 => Processing success] / [1 => Processing failure]
  */
 int			t_string_erase(
-				t_string *ts,
+				t_string *const ts,
 				size_t begin,
 				size_t end);
 
@@ -186,8 +186,8 @@ int			t_string_erase(
  *           [Less than 0 => Second argument is heavier]
  */
 int			t_string_cmp(
-				const t_string *s1,
-				const t_string *s2);
+				const t_string *const s1,
+				const t_string *const s2);
 
 /**
  * Function to search for character from head character of t_string type
@@ -198,7 +198,7 @@ int			t_string_cmp(
  * r. const char* -> [!NULL => Found address] / [NULL => Search failure]
  */
 const char	*t_string_find(
-				const t_string *ts,
+				const t_string *const ts,
 				const char chr);
 
 /**
@@ -210,7 +210,7 @@ const char	*t_string_find(
  * r. const char* -> [!NULL => Found address] / [NULL => Search failure]
  */
 const char	*t_string_find_end(
-				const t_string *ts,
+				const t_string *const ts,
 				const char chr);
 
 /**
@@ -224,7 +224,7 @@ const char	*t_string_find_end(
  * r. const char* -> [!NULL => Found address] / [NULL => Search failure]
  */
 const char	*t_string_find_scope(
-				const t_string *ts,
+				const t_string *const ts,
 				const size_t pnt,
 				const char chr);
 
@@ -239,7 +239,7 @@ const char	*t_string_find_scope(
  * r. const char* -> [!NULL => Found address] / [NULL => Search failure]
  */
 const char	*t_string_search(
-				const t_string *ts,
+				const t_string *const ts,
 				const char *begin,
 				const char *end);
 
@@ -289,7 +289,7 @@ char		*__t_string_memmove(
  * 2. size_t -> Distance that must be allocated
  */
 t_string	*__t_string_realloc(
-				t_string *ts,
+				t_string *const ts,
 				size_t size);
 
 /**

@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find.c                                             :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kofujita <kofujita@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/20 20:03:22 by kofujita          #+#    #+#             */
-/*   Updated: 2025/10/11 22:02:09 by kofujita         ###   ########.fr       */
+/*   Created: 2024/07/17 20:26:26 by kofujita          #+#    #+#             */
+/*   Updated: 2025/10/11 22:09:12 by kofujita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../t_string.h"
+#include <stdio.h>
+#include "../../t_string_list.h"
 
-const char	*t_string_find(
-				const t_string *const ts,
-				const char chr)
+int	main(void)
 {
-	const char	*ts_dp;
-	size_t		cnt;
+	t_string_list	*data;
 
-	if (!ts)
-		return (NULL);
-	ts_dp = ts->__data;
-	cnt = 0;
-	while (cnt != ts->__length)
+	data = t_string_list_init();
+	if (!data)
 	{
-		if (ts_dp[cnt] == chr)
-			return (ts_dp + cnt);
-		cnt++;
+		printf("メモリの確保に失敗しました\n");
+		return (1);
 	}
-	return (NULL);
+	printf("初期化に成功しました\n");
+	t_string_list_free(data);
+	printf("解放に成功しました\n");
+	return (0);
 }

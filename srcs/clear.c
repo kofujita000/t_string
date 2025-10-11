@@ -6,14 +6,14 @@
 /*   By: kofujita <kofujita@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 20:54:23 by kofujita          #+#    #+#             */
-/*   Updated: 2024/07/17 20:55:51 by kofujita         ###   ########.fr       */
+/*   Updated: 2025/10/11 21:57:27 by kofujita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../t_string.h"
 
 void	t_string_clear(
-				t_string *ts)
+				t_string *const ts)
 {
 	if (!ts || ts->__size == 0)
 		return ;

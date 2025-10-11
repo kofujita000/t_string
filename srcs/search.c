@@ -6,14 +6,14 @@
 /*   By: kofujita <kofujita@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 20:08:18 by kofujita          #+#    #+#             */
-/*   Updated: 2024/07/21 16:29:07 by kofujita         ###   ########.fr       */
+/*   Updated: 2025/10/11 22:03:03 by kofujita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../t_string.h"
 
 const char	*t_string_search(
-				const t_string *ts,
+				const t_string *const ts,
 				const char *begin,
 				const char *end)
 {

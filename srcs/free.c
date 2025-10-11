@@ -6,7 +6,7 @@
 /*   By: kofujita <kofujita@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 19:10:03 by kofujita          #+#    #+#             */
-/*   Updated: 2024/07/19 19:57:49 by kofujita         ###   ########.fr       */
+/*   Updated: 2025/10/11 22:02:25 by kofujita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 
 void	t_string_free(
-			t_string *ts)
+			t_string *const ts)
 {
 	(void)(ts && ts->__data && (free(ts->__data), 0));
 	(void)(ts && (free(ts), 0));

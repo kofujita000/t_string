@@ -6,14 +6,14 @@
 /*   By: kofujita <kofujita@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 19:12:48 by kofujita          #+#    #+#             */
-/*   Updated: 2024/07/09 19:42:44 by kofujita         ###   ########.fr       */
+/*   Updated: 2025/10/11 22:02:59 by kofujita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../t_string.h"
 
 t_string	*t_string_resize(
-				t_string *ts,
+				t_string *const ts,
 				size_t rsize)
 {
 	char	*stk;
