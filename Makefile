@@ -6,7 +6,7 @@
 #    By: kofujita <kofujita@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/17 20:29:24 by kofujita          #+#    #+#              #
-#    Updated: 2025/10/11 22:25:21 by kofujita         ###   ########.fr        #
+#    Updated: 2025/10/13 08:50:50 by kofujita         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,9 +39,11 @@ SRCS		:= srcs/append.c \
 			   srcs/size.c \
 			   srcs/strlen.c \
 			   srcs/list/begin.c \
+			   srcs/list/clear.c \
 			   srcs/list/free.c \
 			   srcs/list/init.c \
 			   srcs/list/push_back.c \
+			   srcs/list/push_back_char_ptr.c \
 			   srcs/list/size.c \
 			   srcs/node/free.c \
 			   srcs/node/init.c \

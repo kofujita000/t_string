@@ -6,7 +6,7 @@
 /*   By: kofujita <kofujita@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 21:04:22 by kofujita          #+#    #+#             */
-/*   Updated: 2025/10/11 23:02:39 by kofujita         ###   ########.fr       */
+/*   Updated: 2025/10/13 08:48:23 by kofujita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,18 @@ t_string_node	*t_string_list_push_back(
 					const t_string *const element);
 
 /**
+ * Function to push_back the element(copy)
+ *
+ * 1. t_string_list *const  -> Structure holding information
+ * 2. const char *const     -> push_back element(NULL ... push_back empty)
+ *
+ * r. t_string_node* -> This node address was pushed back element
+ */
+t_string_node	*t_string_list_push_back_char_ptr(
+					t_string_list *const thiz,
+					const char *const element);
+
+/**
  * Function to get the list size
  *
  * 1. t_string_list *const -> Structure holding information
@@ -108,6 +120,14 @@ size_t			t_string_list_size(
  * r. t_string_node* -> Node address
  */
 t_string_node	*t_string_list_begin(
+					t_string_list *const thiz);
+
+/**
+ * Function to clear the string list
+ *
+ * 1. t_string_list *const -> Structure holding information
+ */
+void			t_string_list_clear(
 					t_string_list *const thiz);
 
 #endif  // T_STRING_LIST_H

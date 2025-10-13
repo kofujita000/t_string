@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   clear.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kofujita <kofujita@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/11 21:44:17 by kofujita          #+#    #+#             */
-/*   Updated: 2025/10/13 08:49:41 by kofujita         ###   ########.fr       */
+/*   Created: 2025/10/13 08:48:38 by kofujita          #+#    #+#             */
+/*   Updated: 2025/10/13 08:49:25 by kofujita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../t_string_list.h"
 
-void	t_string_list_free(
+void	t_string_list_clear(
 			t_string_list *const thiz)
 {
-	t_string_list_clear(thiz);
-	free(thiz);
+	t_string_node	*node[2];
+
+	node[0] = thiz->begin;
+	while (node[0])
+	{
+		node[1] = t_string_node_next(node[0]);
+		_t_string_node_free(node[0]);
+		node[0] = node[1];
+	}
+	thiz->begin = NULL;
+	thiz->end = NULL;
+	thiz->size = 0;
 }
