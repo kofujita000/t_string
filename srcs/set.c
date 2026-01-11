@@ -30,8 +30,8 @@ t_string	*t_string_set(
 	res = __t_string_realloc(ts, len);
 	if (!res)
 		return (res);
-	__t_string_memmove(res->__data + res->__length, begin, len);
-	res->__length += len;
+	__t_string_memmove(res->__data, begin, len);
+	res->__length = len;
 	res->__data[res->__length] = 0x00;
 	return (res);
 }

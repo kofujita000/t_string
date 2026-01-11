@@ -27,5 +27,7 @@ int	t_string_cmp(
 	while (cnt++ != min_len)
 		if (s1->__data[cnt] != s2->__data[cnt])
 			return (s1->__data[cnt] - s2->__data[cnt]);
+	if (s1->__length == s2->__length)
+		return (0);
 	return (s1->__data[cnt] - s2->__data[cnt]);
 }
